@@ -22,7 +22,6 @@
     </script>
   <body>
     <div class="container">
-      <p id="warning"></p>
       <br>
       <center><img src="https://github.com/youandri/youandri.github.io/raw/master/DPKL%20LOGO%20PNG.png" style="width:15%"></img></center>
       <h4 class="text-center display-5">Absensi DPKL    
@@ -48,10 +47,18 @@
 		</script>
 		</h4>
       <br>
-      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdk8d2k_jEXa8r_s9qEggCwdiA4-Wy6eT65CzwfuaWwjNqV2w/formResponse" target="_self" method="POST">
+      <script type="text/javascript">
+      var submitted=false;
+      </script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {
+      document.getElementById('butsub').style.visibility = 'hidden';
+      document.getElementById('warning').className = 'alert alert-success';
+      x.innerHTML = 'Terima kasih'+' absen NIP ';
+      x.innerHTML += document.getElementById('nipg').value+' telah dicatat pada pukul '+hours + ':' + minutes;}"></iframe>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdk8d2k_jEXa8r_s9qEggCwdiA4-Wy6eT65CzwfuaWwjNqV2w/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
   <div class="form-group">
     <label for="NIP">NIP (Hanya Angka)</label>
-    <input class="form-control" aria-describedby="emailHelp" name = "entry.2017721388" required>
+    <input class="form-control" aria-describedby="emailHelp" name = "entry.2017721388" required id="nipg">
   </div>
   <div class="form-group">
     <!-- <label for="IP">IP</label> -->
@@ -78,11 +85,12 @@
     <!-- <label for="uag">Longitude</label> -->
     <input type="text" class="form-control" id="longc" aria-describedby="emailHelp" hidden name="entry.451750857">
   </div>
-  
-  
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <button type="submit" class="btn btn-primary" id="butsub">Submit</button>
+  
+  <p id="warning"></p>
+  
+</form>
     </div>
     
       <script>
