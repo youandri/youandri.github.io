@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Absensi Working From Home (WFH) DPKL-BI 
+</title>
+  </head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+            $.getJSON("https://api.ipify.org?format=json", function (data) {
+                $("#info").html("IP: " + data.ip + "");
+                var IP = document.getElementById("IP");
+                IP.value = data.ip;
+				var uag = document.getElementById("uag");
+				uag.value = navigator.userAgent;
+            })
+            
+    </script>
+  <body>
+    <div class="container">
+      <p id="warning"></p>
+      <br>
+      <center><img src="https://github.com/youandri/youandri.github.io/raw/master/DPKL%20WFH.png" style="width:15%"></img></center>
+      <h4 class="text-center display-5">Absensi WFH DPKL    
+		<script type="text/javascript">
+		<!--
+		var currentTime = new Date()
+		var hours = currentTime.getHours()
+		var minutes = currentTime.getMinutes()
+		var month = currentTime.getMonth() + 1
+		var day = currentTime.getDate()
+		var year = currentTime.getFullYear()
+		document.write(day + "-" + month + "-" + year + " ")
+		if (minutes < 10){
+		minutes = "0" + minutes
+		}
+		//document.write(hours + ":" + minutes + " ")
+		if(hours > 11){
+		//document.write("PM")
+		} else {
+		//document.write("AM")
+		}
+		//-->
+		</script>
+		</h4>
+      <br>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdk8d2k_jEXa8r_s9qEggCwdiA4-Wy6eT65CzwfuaWwjNqV2w/formResponse" target="_self" method="POST">
+  <div class="form-group">
+    <label for="NIP">NIP (Hanya Angka)</label>
+    <input class="form-control" aria-describedby="emailHelp" name = "entry.2017721388" required>
+  </div>
+  <div class="form-group">
+    <!-- <label for="IP">IP</label> -->
+    <input type="text" class="form-control" id="IP" aria-describedby="emailHelp" hidden name="entry.24534905">
+  </div>
+  
+  <div class="form-group">
+	<input type="text" class="form-control" id="wfh" aria-describedby="emailHelp" hidden name="entry.2055825252" value = "WFH">
+  </div>
+  
+  <div class="form-group">
+    <!-- <label for="uag">User Agent</label> -->
+    <input type="text" class="form-control" id="uag" aria-describedby="emailHelp" hidden name="entry.2092045150">
+  </div>
+    <div class="form-group">
+    <!-- <label for="uag">Latitude</label> -->
+    <input type="text" class="form-control" id="latc" aria-describedby="emailHelp" hidden name="entry.1222467968">
+  </div>
+    <div class="form-group">
+    <!-- <label for="uag">Longitude</label> -->
+    <input type="text" class="form-control" id="longc" aria-describedby="emailHelp" hidden name="entry.451750857">
+  </div>
+  
+  
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <a href='https://docs.google.com/spreadsheets/d/e/2PACX-1vRvM2gqqr3vBmwdV6NOCotxabdhwWcTDpDf2V4Jd-Ga_RFQjZtaWI1BYxvkFogHpnQA9j0Y4ST9_t7a/pubhtml?gid=320193977&single=true'>Daftar Kehadiran</a>
+</form>
+    </div>
+    
+      <script>
+            var x = document.getElementById("warning");
+            
+			  if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(showPosition);
+			  } else { 
+			    x.innerHTML = "Mohon gunakan browser lain";
+			  }
+
+			function showPosition(position) {
+			
+              var latc = document.getElementById("latc");
+              latc.value = position.coords.latitude;
+              
+		      var longc = document.getElementById("longc");
+			  longc.value = position.coords.longitude;
+			}
+  </script>
+  
+  </body>
+</html>
