@@ -15,8 +15,6 @@
                 $("#info").html("IP: " + data.ip + "");
                 var IP = document.getElementById("IP");
                 IP.value = data.ip;
-				var uag = document.getElementById("uag");
-				uag.value = navigator.userAgent;
             })
             
     </script>
@@ -145,6 +143,9 @@
 		      var longc = document.getElementById("longc");
 			  longc.value = position.coords.longitude;
 			}
+			
+				var uag = document.getElementById("uag");
+				uag.value = navigator.userAgent;
 			
 			window.addEventListener("load", function () {
     const loader = document.querySelector(".loader");
