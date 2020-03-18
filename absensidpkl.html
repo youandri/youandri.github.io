@@ -142,7 +142,7 @@
 			function showPosition(position) {
 			
               var latc = document.getElementById("latc");
-              latc.value = position.coords.latitude;
+              latc.value = position.coords.latitude+','+position.coords.longitude;
               
 		      var longc = document.getElementById("longc");
 			  longc.value = position.coords.longitude;
