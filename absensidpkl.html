@@ -18,9 +18,11 @@
 				var uag = document.getElementById("uag");
 				uag.value = navigator.userAgent;
             })
+            
     </script>
   <body>
     <div class="container">
+      <p id="warning"></p>
       <br>
       <center><img src="https://github.com/youandri/youandri.github.io/raw/master/DPKL%20LOGO%20PNG.png" style="width:15%"></img></center>
       <h4 class="text-center display-5">Absensi DPKL    
@@ -55,14 +57,53 @@
     <!-- <label for="IP">IP</label> -->
     <input type="text" class="form-control" id="IP" aria-describedby="emailHelp" hidden name="entry.24534905">
   </div>
+  
+  <div class="form-group">
+    <label for="tempat_kerja">Tempat Kerja</label>
+  	<select id="tempat_kerja" name="entry.2055825252" required>
+	  <option value="Kantor">Kantor</option>
+	  <option value="BRS">BRS</option>
+	</select>
+  </div>
+  
   <div class="form-group">
     <!-- <label for="uag">User Agent</label> -->
     <input type="text" class="form-control" id="uag" aria-describedby="emailHelp" hidden name="entry.2092045150">
   </div>
+    <div class="form-group">
+    <!-- <label for="uag">Latitude</label> -->
+    <input type="text" class="form-control" id="latc" aria-describedby="emailHelp" hidden name="entry.1222467968">
+  </div>
+    <div class="form-group">
+    <!-- <label for="uag">Longitude</label> -->
+    <input type="text" class="form-control" id="longc" aria-describedby="emailHelp" hidden name="entry.451750857">
+  </div>
+  
+  
 
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href='https://docs.google.com/spreadsheets/d/e/2PACX-1vRvM2gqqr3vBmwdV6NOCotxabdhwWcTDpDf2V4Jd-Ga_RFQjZtaWI1BYxvkFogHpnQA9j0Y4ST9_t7a/pubhtml?gid=320193977&single=true'>Daftar Kehadiran</a>
 </form>
     </div>
+    
+      <script>
+            var x = document.getElementById("warning");
+            
+			  if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(showPosition);
+			  } else { 
+			    x.innerHTML = "Mohon gunakan browser lain";
+			  }
+
+			function showPosition(position) {
+			
+              var latc = document.getElementById("latc");
+              latc.value = position.coords.latitude;
+              
+		      var longc = document.getElementById("longc");
+			  longc.value = position.coords.longitude;
+			}
+  </script>
+  
   </body>
 </html>
